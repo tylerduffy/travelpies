@@ -5,13 +5,12 @@ const Canvas = ({
     height
 }) => {
     
-    const setCanvasRef = useOnDraw(onDraw);
+    const {
+        onMouseDown,
+        setCanvasRef
+    } = useOnDraw(onDraw);
 
     function onDraw(ctx, point, prevPoint) {
-        /*ctx.fillStyle = '#000000';
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, 2, 0, 2 * Math.PI);
-        ctx.fill();*/
         drawLine(prevPoint, point, ctx, '#000000', 5);
     }
 
@@ -34,6 +33,7 @@ const Canvas = ({
         <canvas
             width={width}
             height={height}
+            onMouseDown={onMouseDown}
             style={canvasStyle}
             ref={setCanvasRef}
         />
