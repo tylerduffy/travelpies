@@ -7,6 +7,7 @@ const Canvas = ({
     
     const {
         onMouseDown,
+        onTouchStart,
         setCanvasRef
     } = useOnDraw(onDraw);
 
@@ -34,6 +35,7 @@ const Canvas = ({
             width={width}
             height={height}
             onMouseDown={onMouseDown}
+            onTouchStart={onTouchStart}
             style={canvasStyle}
             ref={setCanvasRef}
         />
